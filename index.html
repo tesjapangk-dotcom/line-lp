@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINE公式アカウント 構築代行 | TEsJapan.gk</title>
+  <meta name="description" content="Lステップ×お悩み診断で自動集客。LINE公式アカウントの設計から構築・運用まで完全代行。友だち追加から成約まで全自動化します。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2563eb;
+      --accent: #f59e0b;
+      --green: #10b981;
+      --line: #06C755;
+      --sky: #e0f2fe;
+      --text: #1e293b;
+      --muted: #64748b;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; color: var(--text); line-height: 1.7; background: var(--white); }
+
+    header {
+      background: var(--white);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .logo { font-size: 1.3rem; font-weight: 900; color: var(--primary); letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 28px; font-size: 0.9rem; font-weight: 500; }
+    nav a:hover { color: var(--primary); }
+    .btn-header { background: var(--primary); color: var(--white) !important; padding: 9px 22px; border-radius: 8px; font-weight: 700; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 40%, #e0f2fe 100%);
+      padding: 100px 40px 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      color: #92400e;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.25; margin-bottom: 24px; letter-spacing: -0.03em; }
+    .hero h1 .highlight { color: var(--primary); }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 580px; margin: 0 auto 40px; }
+    .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: var(--white); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 16px rgba(37,99,235,0.35); }
+    .btn-secondary { background: var(--white); color: var(--primary); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid #bfdbfe; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 64px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2.4rem; font-weight: 900; color: var(--primary); line-height: 1; }
+    .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 6px; }
+
+    section { padding: 88px 40px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-tag { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 14px; line-height: 1.3; }
+    .section-desc { color: var(--muted); font-size: 1rem; max-width: 560px; margin-bottom: 48px; }
+
+    /* FLOW */
+    .flow-section { background: var(--white); }
+    .flow-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .flow-step {
+      background: var(--sky);
+      border: 2px solid #bae6fd;
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      width: 160px;
+    }
+    .flow-step .num { background: var(--primary); color: var(--white); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 10px; font-size: 0.85rem; }
+    .flow-step .step-icon { font-size: 2rem; margin-bottom: 8px; }
+    .flow-step p { font-size: 0.82rem; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .flow-step small { font-size: 0.74rem; color: var(--muted); font-weight: 400; display: block; margin-top: 4px; }
+    .flow-arrow { font-size: 1.4rem; color: #93c5fd; }
+
+    /* RICH MENU */
+    .richmenu-section { background: #f8fafc; }
+    .rich-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; background: #d1d5db; border-radius: 14px; overflow: hidden; max-width: 480px; margin: 0 auto 40px; border: 3px solid #d1d5db; }
+    .rm-item { background: var(--white); padding: 28px 16px; text-align: center; }
+    .rm-item:hover { background: #f0f9ff; }
+    .rm-icon { font-size: 2rem; margin-bottom: 8px; }
+    .rm-label { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+    .rm-action { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+    /* DIAGNOSIS */
+    .diag-section { background: #fffbeb; }
+    .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .q-card { background: var(--white); border-radius: 12px; padding: 24px; border: 1px solid #fde68a; position: relative; padding-top: 36px; }
+    .q-num { position: absolute; top: -13px; left: 20px; background: var(--primary); color: var(--white); font-size: 0.78rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+    .q-text { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+    .q-options { display: flex; flex-direction: column; gap: 6px; }
+    .q-options span { font-size: 0.82rem; background: #f8fafc; padding: 6px 12px; border-radius: 6px; color: #374151; border: 1px solid #e2e8f0; }
+
+    .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .type-card { background: var(--white); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #fde68a; }
+    .type-badge { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--white); padding: 3px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .type-card:nth-child(1) .type-badge { background: var(--primary); }
+    .type-card:nth-child(2) .type-badge { background: var(--line); }
+    .type-card:nth-child(3) .type-badge { background: #8b5cf6; }
+    .type-card:nth-child(4) .type-badge { background: var(--accent); color: #1e293b; }
+    .type-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .type-card p { font-size: 0.82rem; color: var(--muted); }
+
+    /* SCENARIO */
+    .scenario-section { background: var(--white); }
+    .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .scenario-card { background: #f8fafc; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .s-trigger { font-size: 0.75rem; font-weight: 700; color: var(--primary); background: #dbeafe; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+    .scenario-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
+    .scenario-card ul { list-style: none; }
+    .scenario-card li { font-size: 0.84rem; color: #374151; padding: 5px 0; padding-left: 18px; position: relative; border-bottom: 1px solid #f1f5f9; }
+    .scenario-card li::before { content: '→'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+    /* KPI */
+    .kpi-section { background: #f8fafc; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .kpi-card { background: var(--white); border-radius: 14px; padding: 28px 24px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .kpi-icon { font-size: 2rem; margin-bottom: 10px; }
+    .kpi-num { font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
+    .kpi-label { font-size: 0.88rem; font-weight: 700; margin: 8px 0 4px; }
+    .kpi-desc { font-size: 0.78rem; color: var(--muted); }
+
+    /* SCHEDULE */
+    .schedule-section { background: var(--white); }
+    .timeline { position: relative; padding-left: 36px; max-width: 620px; }
+    .timeline::before { content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(to bottom, var(--primary), #93c5fd); border-radius: 3px; }
+    .tl-item { position: relative; margin-bottom: 32px; }
+    .tl-item::before { content: ''; position: absolute; left: -28px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--primary); }
+    .tl-week { font-size: 0.78rem; font-weight: 800; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 4px; }
+    .tl-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .tl-desc { font-size: 0.84rem; color: var(--muted); }
+
+    /* PRICING */
+    .pricing-section { background: #eff6ff; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .price-card { background: var(--white); border-radius: 20px; padding: 36px 28px; text-align: center; border: 2px solid #e2e8f0; position: relative; }
+    .price-card.featured { border-color: var(--primary); box-shadow: 0 8px 32px rgba(37,99,235,0.18); }
+    .featured-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--white); padding: 5px 20px; border-radius: 20px; font-size: 0.78rem; font-weight: 800; white-space: nowrap; }
+    .plan-name { font-size: 0.82rem; font-weight: 700; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 10px; }
+    .plan-price { font-size: 3rem; font-weight: 900; color: var(--primary); line-height: 1; }
+    .plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+    .plan-desc { font-size: 0.84rem; color: var(--muted); margin: 10px 0 20px; }
+    .plan-list { text-align: left; }
+    .plan-list li { list-style: none; padding: 9px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.86rem; display: flex; align-items: flex-start; gap: 8px; color: #374151; }
+    .plan-list li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .plan-list li.off { color: #d1d5db; }
+    .plan-list li.off::before { content: '−'; color: #d1d5db; }
+    .btn-plan { display: block; background: var(--primary); color: var(--white); text-decoration: none; padding: 14px; border-radius: 10px; font-weight: 700; margin-top: 24px; }
+    .price-notice { text-align: center; margin-top: 32px; font-size: 0.82rem; color: var(--muted); background: var(--white); padding: 16px 24px; border-radius: 10px; max-width: 900px; margin-left: auto; margin-right: auto; border: 1px solid #dbeafe; }
+
+    /* CTA */
+    .cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%); color: var(--white); text-align: center; padding: 88px 40px; }
+    .cta h2 { color: var(--white); margin-bottom: 16px; }
+    .cta p { color: rgba(255,255,255,0.82); margin-bottom: 40px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white { background: var(--white); color: var(--primary); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+    .btn-cta-outline { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.5); }
+
+    footer { background: #1e293b; color: rgba(255,255,255,0.65); padding: 52px 40px 32px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-logo { color: var(--white); font-size: 1.3rem; font-weight: 900; margin-bottom: 14px; display: block; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.85; }
+    .footer-info h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 16px; font-weight: 700; }
+    .footer-info p { font-size: 0.85rem; line-height: 2; }
+    .footer-bottom { max-width: 1000px; margin: 24px auto 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 640px) {
+      header { padding: 14px 20px; }
+      nav a.hide-sp { display: none; }
+      section { padding: 64px 20px; }
+      .hero { padding: 72px 20px 56px; }
+      .diag-grid { grid-template-columns: 1fr; }
+      .flow-wrap { gap: 8px; }
+      .flow-step { width: 140px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">TEs<span>Japan.gk</span></div>
+  <nav>
+    <a href="#flow" class="hide-sp">フロー</a>
+    <a href="#pricing" class="hide-sp">料金</a>
+    <a href="#contact" class="btn-header">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">💬 Lステップ × お悩み診断 LINE構築代行</div>
+    <h1>友だち追加から成約まで、<br><span class="highlight">全部LINEで自動化する。</span></h1>
+    <p>診断シナリオ・ステップ配信・タグ管理を組み合わせて、集客から商談予約まで自動化。寝ていても見込み客が育つLINE公式アカウントを構築します。</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">無料相談を予約する →</a>
+      <a href="#flow" class="btn-secondary">設計フローを見る</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4週</div><div class="stat-label">最短構築期間</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-label">診断完了率目標</div></div>
+      <div class="stat"><div class="stat-num">3本</div><div class="stat-label">プランから選べる</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section" id="flow">
+  <div class="container">
+    <div class="section-tag">OVERVIEW</div>
+    <h2>全体フロー — 友だち追加から予約まで<span style="color:var(--primary)">自動で完結</span></h2>
+    <p class="section-desc">QR・HP・SNSから流入した見込み客を、LINEが自動でナーチャリングします。</p>
+    <div class="flow-wrap">
+      <div class="flow-step">
+        <div class="num">1</div>
+        <div class="step-icon">👥</div>
+        <p>友だち追加<small>QR / HP / SNS / 広告</small></p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">2</div>
+        <div class="step-icon">💬</div>
+        <p>挨拶メッセージ<small>自己紹介 + 診断誘導</small></p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">3</div>
+        <div class="step-icon">🔍</div>
+        <p>お悩み診断<small>3問で課題を特定</small></p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">4</div>
+        <div class="step-icon">🎯</div>
+        <p>タイプ別配信<small>最適なサービス提案</small></p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">5</div>
+        <div class="step-icon">📅</div>
+        <p>相談予約へ<small>フォーム / 電話 / メール</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RICH MENU -->
+<section class="richmenu-section">
+  <div class="container">
+    <div class="section-tag">RICH MENU</div>
+    <h2>リッチメニュー設計 — <span style="color:var(--primary)">6分割</span>で全機能にワンタップアクセス</h2>
+    <p class="section-desc">ユーザーが迷わずアクションを起こせるメニュー設計です。</p>
+    <div class="rich-menu">
+      <div class="rm-item"><div class="rm-icon">🔍</div><div class="rm-label">お悩み診断</div><div class="rm-action">→ 診断シナリオ起動</div></div>
+      <div class="rm-item"><div class="rm-icon">💼</div><div class="rm-label">サービス一覧</div><div class="rm-action">→ カルーセル配信</div></div>
+      <div class="rm-item"><div class="rm-icon">📋</div><div class="rm-label">実績を見る</div><div class="rm-action">→ HP実績ページ</div></div>
+      <div class="rm-item"><div class="rm-icon">📅</div><div class="rm-label">無料相談予約</div><div class="rm-action">→ 予約フォーム</div></div>
+      <div class="rm-item"><div class="rm-icon">📖</div><div class="rm-label">お役立ち情報</div><div class="rm-action">→ コラム配信</div></div>
+      <div class="rm-item"><div class="rm-icon">💬</div><div class="rm-label">お問い合わせ</div><div class="rm-action">→ 1:1トーク</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSIS -->
+<section class="diag-section">
+  <div class="container">
+    <div class="section-tag">DIAGNOSIS</div>
+    <h2>お悩み診断 — <span style="color:var(--primary)">3問</span>でニーズを自動分類</h2>
+    <p class="section-desc">回答パターンで4タイプに分類し、それぞれに最適なシナリオへ自動分岐します。</p>
+    <div class="diag-grid">
+      <div class="q-card">
+        <div class="q-num">Q1</div>
+        <div class="q-text">今いちばん困っていることは？</div>
+        <div class="q-options">
+          <span>A. 手作業が多くて時間がない</span>
+          <span>B. 集客・リピートが伸びない</span>
+          <span>C. 情報がバラバラで管理できない</span>
+          <span>D. 何から始めればいいかわからない</span>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">Q2</div>
+        <div class="q-text">現在メインで使っているツールは？</div>
+        <div class="q-options">
+          <span>A. Microsoft 365（Excel / Teams等）</span>
+          <span>B. LINE公式アカウント</span>
+          <span>C. Googleツール（スプシ / Forms等）</span>
+          <span>D. 特にない / 紙・メール中心</span>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">Q3</div>
+        <div class="q-text">理想のゴールに近いのは？</div>
+        <div class="q-options">
+          <span>A. ルーティン業務を自動化したい</span>
+          <span>B. 売上・来店数を増やしたい</span>
+          <span>C. AIを活用して生産性を上げたい</span>
+          <span>D. まるっとDX相談したい</span>
+        </div>
+      </div>
+      <div class="q-card" style="border-color: #dbeafe; background: #f0f9ff;">
+        <div class="q-num" style="background: var(--green);">結果</div>
+        <div class="q-text">4タイプに自動分類してシナリオ分岐</div>
+        <div class="type-grid" style="gap:10px; margin-top:8px;">
+          <div style="background:var(--white); border-radius:8px; padding:10px; border:1px solid #e2e8f0; font-size:0.82rem;"><strong style="color:var(--primary)">Type A</strong> 業務自動化</div>
+          <div style="background:var(--white); border-radius:8px; padding:10px; border:1px solid #e2e8f0; font-size:0.82rem;"><strong style="color:var(--line)">Type B</strong> LINE集客</div>
+          <div style="background:var(--white); border-radius:8px; padding:10px; border:1px solid #e2e8f0; font-size:0.82rem;"><strong style="color:#8b5cf6">Type C</strong> AI活用</div>
+          <div style="background:var(--white); border-radius:8px; padding:10px; border:1px solid #e2e8f0; font-size:0.82rem;"><strong style="color:var(--accent)">Type D</strong> まるっとDX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIO -->
+<section class="scenario-section">
+  <div class="container">
+    <div class="section-tag">SCENARIO</div>
+    <h2>4つのシナリオが<span style="color:var(--primary)">自動で動く</span></h2>
+    <p class="section-desc">トリガーごとに最適なシナリオが起動し、フォローアップを完全自動化します。</p>
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="s-trigger">診断完了後</div>
+        <h4>🔥 ステップ配信</h4>
+        <ul>
+          <li>直後：診断結果 + おすすめサービス詳細</li>
+          <li>1日後：該当サービスの事例紹介</li>
+          <li>3日後：お役立ちコラム（業種別Tips）</li>
+          <li>5日後：無料相談のリマインド</li>
+          <li>7日後：限定特典オファー</li>
+        </ul>
+      </div>
+      <div class="scenario-card">
+        <div class="s-trigger">リッチメニュータップ</div>
+        <h4>📋 サービス案内</h4>
+        <ul>
+          <li>サービス一覧カルーセル配信</li>
+          <li>各サービス詳細ページリンク</li>
+          <li>料金・導入の流れ案内</li>
+          <li>相談予約フォームへ誘導</li>
+        </ul>
+      </div>
+      <div class="scenario-card">
+        <div class="s-trigger">未反応7日後</div>
+        <h4>🔄 リエンゲージ</h4>
+        <ul>
+          <li>診断未完了者へリマインド</li>
+          <li>新着コラム・事例の配信</li>
+          <li>季節イベント・キャンペーン</li>
+          <li>再診断の案内</li>
+        </ul>
+      </div>
+      <div class="scenario-card">
+        <div class="s-trigger">相談予約完了後</div>
+        <h4>✅ 予約後フォロー</h4>
+        <ul>
+          <li>直後：予約確認 + 事前ヒアリング</li>
+          <li>前日：リマインド + 準備事項案内</li>
+          <li>当日：Zoom URL / アクセス情報</li>
+          <li>翌日：お礼 + 提案書送付案内</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI -->
+<section class="kpi-section">
+  <div class="container">
+    <div class="section-tag">KPI</div>
+    <h2>目標とする<span style="color:var(--primary)">4つの指標</span></h2>
+    <p class="section-desc">構築後は月次レポートで数値を追い、改善提案まで伴走します。</p>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-icon">👥</div><div class="kpi-num">50<small style="font-size:1.2rem">人</small></div><div class="kpi-label">月間友だち追加数</div><div class="kpi-desc">月間目標</div></div>
+      <div class="kpi-card"><div class="kpi-icon">📊</div><div class="kpi-num">60<small style="font-size:1.2rem">%</small></div><div class="kpi-label">診断完了率</div><div class="kpi-desc">目標値</div></div>
+      <div class="kpi-card"><div class="kpi-icon">📅</div><div class="kpi-num">15<small style="font-size:1.2rem">%</small></div><div class="kpi-label">相談予約率</div><div class="kpi-desc">診断完了者のうち</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🚫</div><div class="kpi-num">10<small style="font-size:1.2rem">%</small></div><div class="kpi-label">ブロック率</div><div class="kpi-desc">以下に抑制</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section">
+  <div class="container">
+    <div class="section-tag">SCHEDULE</div>
+    <h2>最短<span style="color:var(--primary)">4週間</span>でリリース</h2>
+    <p class="section-desc">週単位で進捗を共有しながら、スムーズに本番稼働まで進めます。</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-week">WEEK 1</div>
+        <div class="tl-title">LINE公式アカウント開設 + Lステップ連携</div>
+        <div class="tl-desc">アカウント設定・Webhook接続・応答設定</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">WEEK 2</div>
+        <div class="tl-title">リッチメニュー作成 + 挨拶メッセージ設定</div>
+        <div class="tl-desc">デザイン制作・テキスト入稿・テスト配信</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">WEEK 3</div>
+        <div class="tl-title">お悩み診断シナリオ構築</div>
+        <div class="tl-desc">質問フロー・スコアリング・結果分岐の実装</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">WEEK 4</div>
+        <div class="tl-title">ステップ配信 + フォローシナリオ設定</div>
+        <div class="tl-desc">配信テスト・タグ動作確認・本番リリース</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-tag">PRICING</div>
+    <h2>3つのプランから<span style="color:var(--primary)">選べる</span></h2>
+    <p class="section-desc">規模や目的に合わせてお選びください。どのプランもご相談から対応します。</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="plan-name">START PLAN</div>
+        <div class="plan-price">20<span>万円（税別）</span></div>
+        <div class="plan-desc">まずはLINEを始めたい方に</div>
+        <ul class="plan-list">
+          <li>LINE公式アカウント開設</li>
+          <li>リッチメニュー 1パターン</li>
+          <li>挨拶メッセージ設定</li>
+          <li>応答メッセージ（5パターン）</li>
+          <li>友だち追加QRコード作成</li>
+          <li>基本タグ設計（3種）</li>
+          <li class="off">お悩み診断</li>
+          <li class="off">ステップ配信シナリオ</li>
+          <li class="off">月次レポート</li>
+        </ul>
+        <a href="#contact" class="btn-plan">お問い合わせ</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">おすすめ</div>
+        <div class="plan-name">STANDARD PLAN</div>
+        <div class="plan-price">40<span>万円（税別）</span></div>
+        <div class="plan-desc">診断＋自動配信で成果を出す</div>
+        <ul class="plan-list">
+          <li>スタートプラン全内容</li>
+          <li>リッチメニュー 2パターン切替</li>
+          <li>お悩み診断コンテンツ構築</li>
+          <li>ステップ配信（5通シナリオ）</li>
+          <li>タグ・セグメント設計（10種）</li>
+          <li>カルーセルメッセージ作成</li>
+          <li>予約フォーム連携</li>
+          <li>初月配信サポート</li>
+          <li class="off">月次レポート・改善提案</li>
+        </ul>
+        <a href="#contact" class="btn-plan">お問い合わせ</a>
+      </div>
+      <div class="price-card">
+        <div class="plan-name">PRO PLAN</div>
+        <div class="plan-price">60<span>万円（税別）</span></div>
+        <div class="plan-desc">完全自動化＋運用伴走</div>
+        <ul class="plan-list">
+          <li>スタンダードプラン全内容</li>
+          <li>リッチメニュー 3パターン条件切替</li>
+          <li>複数シナリオ構築（3本以上）</li>
+          <li>リエンゲージ配信設計</li>
+          <li>スコアリング＆HOT通知</li>
+          <li>流入経路別QR（5本）</li>
+          <li>月次レポート＆改善提案（3ヶ月）</li>
+          <li>配信代行（月4回×3ヶ月）</li>
+          <li>運用マニュアル納品</li>
+        </ul>
+        <a href="#contact" class="btn-plan">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="price-notice">
+      ※ 表示価格はすべて税別です。消費税が別途かかります。<br>
+      ※ Lステップの月額費用は別途クライアント様にてご契約いただきます。
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>まず無料相談から始めましょう</h2>
+    <p>貴社のビジネスモデルをヒアリングしたうえで、<br>最適なLINE設計をご提案します。お気軽にどうぞ。</p>
+    <div class="cta-buttons">
+      <a href="mailto:tesjapan.gk@gmail.com?subject=LINE公式アカウント構築 お問い合わせ" class="btn-cta-white">📧 メールで問い合わせる</a>
+      <a href="tel:07022222091" class="btn-cta-outline">📞 070-2222-2091</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">TEs<span>Japan.gk</span></span>
+      <p>業務効率化のプロとして、<br>中小企業の「面倒」を<br>テクノロジーで解消します。</p>
+    </div>
+    <div class="footer-info">
+      <h4>お問い合わせ</h4>
+      <p>TEsJapan.gk<br>TEL: 070-2222-2091<br>MAIL: tesjapan.gk@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 TEsJapan.gk. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
