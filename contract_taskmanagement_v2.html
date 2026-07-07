@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>法人向けソフトウェア利用契約書（タスク管理システム）</title>
+<style>
+  @page {
+    size: B4 landscape;
+    margin: 6mm 8mm 6mm 8mm;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Yu Mincho', '游明朝', 'MS Mincho', serif;
+    font-size: 6pt;
+    line-height: 1.2;
+    color: #111;
+    background: #fff;
+    width: 337mm;
+    margin: 0 auto;
+  }
+
+  .doc-title {
+    text-align: center;
+    font-size: 11pt;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2mm;
+    padding-bottom: 0.8mm;
+    border-bottom: 2px solid #111;
+  }
+  .doc-subtitle {
+    text-align: center;
+    font-size: 6.5pt;
+    color: #444;
+    margin-bottom: 1.5mm;
+  }
+
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5mm;
+    margin-bottom: 1.2mm;
+    font-size: 6pt;
+  }
+  .party-box {
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 1mm 1.5mm;
+  }
+  .party-box .party-label {
+    font-weight: bold;
+    font-size: 6.4pt;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4mm;
+    margin-bottom: 0.6mm;
+  }
+  .party-row {
+    display: grid;
+    grid-template-columns: 14mm 1fr;
+    gap: 0.8mm;
+    margin-bottom: 0.3mm;
+  }
+  .party-key { color: #555; }
+  .party-val { border-bottom: 1px solid #bbb; min-height: 3.2mm; }
+
+  .date-row {
+    text-align: center;
+    font-size: 6pt;
+    margin-bottom: 1.2mm;
+    color: #444;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin-bottom: 1.2mm;
+  }
+
+  .article {
+    margin-bottom: 0.7mm;
+  }
+  .article-title {
+    font-weight: bold;
+    font-size: 6.3pt;
+    background: #f0f0f0;
+    padding: 0.3mm 1.2mm;
+    margin-bottom: 0.5mm;
+    border-left: 2.5px solid #333;
+  }
+  .article-body {
+    padding: 0 1mm;
+  }
+  .article-body p {
+    margin-bottom: 0.2mm;
+  }
+  .item {
+    padding-left: 2.8mm;
+    text-indent: -2.8mm;
+    margin-bottom: 0.15mm;
+  }
+  .para {
+    padding-left: 2.8mm;
+    text-indent: -2.8mm;
+    margin-bottom: 0.2mm;
+  }
+
+  /* Appendix full-width section */
+  .appendix-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin-bottom: 1mm;
+  }
+  .appendix-title {
+    font-weight: bold;
+    font-size: 6.3pt;
+    background: #e8e8e8;
+    padding: 0.3mm 1.2mm;
+    margin-bottom: 0.6mm;
+    border-left: 2.5px solid #555;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 5.8pt;
+    margin-bottom: 0.6mm;
+  }
+  th {
+    background: #333;
+    color: #fff;
+    padding: 0.5mm 0.8mm;
+    text-align: center;
+    font-weight: bold;
+  }
+  td {
+    border: 1px solid #bbb;
+    padding: 0.5mm 0.8mm;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #fafafa; }
+
+  .spec-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2mm;
+    font-size: 5.8pt;
+    padding: 0 1mm;
+    list-style: none;
+    margin-bottom: 0.6mm;
+  }
+  .spec-list li {
+    padding-left: 2.5mm;
+    text-indent: -2.5mm;
+    margin-bottom: 0.2mm;
+  }
+  .spec-list li::before { content: '▶ '; color: #555; font-size: 3.5pt; }
+
+  .note {
+    font-size: 5.4pt;
+    color: #555;
+    padding: 0.5mm 0.8mm;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    line-height: 1.25;
+  }
+
+  .signature-area {
+    border: 1.5px solid #333;
+    border-radius: 2px;
+    padding: 1.2mm 1.5mm;
+    margin-top: 0;
+  }
+  .sig-title {
+    font-weight: bold;
+    font-size: 6.3pt;
+    text-align: center;
+    margin-bottom: 0.8mm;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4mm;
+  }
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5mm;
+  }
+  .sig-box .sig-label {
+    font-weight: bold;
+    font-size: 6pt;
+    margin-bottom: 0.4mm;
+    color: #333;
+  }
+  .sig-row {
+    display: grid;
+    grid-template-columns: 14mm 1fr;
+    gap: 0.8mm;
+    margin-bottom: 0.6mm;
+    font-size: 5.8pt;
+  }
+  .sig-key { color: #555; }
+  .sig-val { border-bottom: 1px solid #bbb; min-height: 3.5mm; }
+
+  .doc-footer {
+    text-align: center;
+    font-size: 5.4pt;
+    color: #777;
+    margin-top: 0.8mm;
+    border-top: 1px solid #ddd;
+    padding-top: 0.6mm;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="doc-title">法人向けソフトウェア利用契約書</div>
+<div class="doc-subtitle">TEsJapan タスク管理システム ／ 部署単位契約版</div>
+
+<div class="parties">
+  <div class="party-box">
+    <div class="party-label">甲（提供者）</div>
+    <div class="party-row"><span class="party-key">商号等</span><span class="party-val">TEsJapan</span></div>
+    <div class="party-row"><span class="party-key">代表者</span><span class="party-val">小野寺 和裕</span></div>
+    <div class="party-row"><span class="party-key">所在地</span><span class="party-val">〒104-0061　東京都中央区銀座1丁目12番4号　N&amp;E BLD 6F</span></div>
+    <div class="party-row"><span class="party-key">連絡先</span><span class="party-val">070-2222-2091 ／ tesjapan.gk@gmail.com</span></div>
+  </div>
+  <div class="party-box">
+    <div class="party-label">乙（利用者）</div>
+    <div class="party-row"><span class="party-key">商号等</span><span class="party-val">&nbsp;</span></div>
+    <div class="party-row"><span class="party-key">代表者</span><span class="party-val">&nbsp;</span></div>
+    <div class="party-row"><span class="party-key">所在地</span><span class="party-val">&nbsp;</span></div>
+    <div class="party-row"><span class="party-key">利用部署</span><span class="party-val">&nbsp;</span></div>
+  </div>
+</div>
+
+<div class="date-row">契約締結日：　　　　年　　　月　　　日　　　　※本書2通を作成し、甲乙各1通を保持する</div>
+
+<div class="columns">
+
+  <!-- 左カラム -->
+  <div class="col">
+
+    <div class="article">
+      <div class="article-title">第1条（目的）</div>
+      <div class="article-body">
+        <p>本契約は、甲が乙に対して「TEsJapan タスク管理システム」（以下「本サービス」）を提供し、乙がこれを利用するにあたっての権利義務関係を定めることを目的とします。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第2条（定義）</div>
+      <div class="article-body">
+        <p class="item">①「本サービス」：甲が提供するWebブラウザ上で動作するタスク管理クラウドサービス</p>
+        <p class="item">②「本システム」：本サービスを提供するためのソフトウェア・DB・インフラ等の総体</p>
+        <p class="item">③「利用者データ」：乙が本サービスを利用することにより提供される一切のデータ</p>
+        <p class="item">④「機密情報」：本契約に関連して相手方から開示された技術上・経営上その他の情報</p>
+        <p class="item">⑤「部署」：乙の組織内において本サービスを利用する単位として甲乙間で合意した単位</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第3条（ライセンスの付与）</div>
+      <div class="article-body">
+        <p class="para">１　甲は乙に対し、本契約期間中、本サービスを利用するための非独占的・譲渡不可能なライセンスを付与します。</p>
+        <p class="para">２　乙は本サービスを業務目的のみに使用し、第三者への提供・再販売・転貸等はできません。</p>
+        <p class="para">３　乙は、甲の書面による事前承諾なく本システムのリバースエンジニアリング等を行えません。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第4条（利用料金および支払条件）</div>
+      <div class="article-body">
+        <p class="para">１　利用料金は別紙料金表のとおりとします。</p>
+        <p class="para">２　甲は毎月末日締め・翌月15日までに請求書を送付し、乙は受領後30日以内に振込みにより支払います（振込手数料は乙負担）。支払遅延の場合、年率14.6%の遅延損害金が発生します。</p>
+        <p class="para">３　甲は、物価の著しい変動または機能の大幅変更がある場合に限り、3ヶ月前通知により料金を変更できます。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第5条（機密保持）</div>
+      <div class="article-body">
+        <p class="para">１　甲乙は、本契約期間中および終了後3年間、相手方の機密情報を厳重に管理し、書面による承諾なく第三者に開示・漏洩しません。</p>
+        <p class="para">２　次に該当する情報は前項の適用を除きます。①開示時に既に公知の情報、②開示後に自己の責によらず公知となった情報、③開示時に既に自己が保有していた情報、④法令・裁判所命令により開示義務がある情報</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第6条（個人情報の取り扱い）</div>
+      <div class="article-body">
+        <p class="para">１　甲は、乙が登録する個人情報を個人情報保護法に従い適切に管理し、本サービス提供目的以外に利用しません。</p>
+        <p class="para">２　甲は、本サービス提供に必要な範囲でクラウドサービス事業者等に処理を委託することがあります。その際は委託先との間で適切な個人情報保護契約を締結します。</p>
+        <p class="para">３　本契約終了後、甲は乙の指示に従い合理的な期間内に利用者データを削除または返還します。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第7条（知的財産権）</div>
+      <div class="article-body">
+        <p class="para">１　本サービスに関する一切の知的財産権は甲に帰属します。本契約はいかなる知的財産権の移転も行いません。</p>
+        <p class="para">２　乙が入力したデータおよびこれに関する一切の権利は乙に帰属します。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第8条（禁止事項）</div>
+      <div class="article-body">
+        <p class="item">① 法令・公序良俗に違反する行為</p>
+        <p class="item">② 甲または第三者の権利を侵害する行為</p>
+        <p class="item">③ 本サービスの運営を妨害する行為</p>
+        <p class="item">④ アカウントの第三者への提供・転売</p>
+        <p class="item">⑤ 本サービスを通じて取得した情報の不正利用</p>
+        <p class="item">⑥ その他甲が不適切と判断する行為</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 右カラム -->
+  <div class="col">
+
+    <div class="article">
+      <div class="article-title">第9条（表明・保証）</div>
+      <div class="article-body">
+        <p class="para">１　甲は、本サービスが乙の特定の目的への適合性、完全性、正確性、不具合が生じないことを保証しません。</p>
+        <p class="para">２　乙は、本サービスの利用にあたり、自己の責任でバックアップその他のデータ保護措置を講じるものとします。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第10条（免責事項および損害賠償の制限）</div>
+      <div class="article-body">
+        <p class="para">１　甲は、故意または重大な過失による場合を除き、本サービスの利用・利用不能に起因する損害について責任を負いません。</p>
+        <p class="para">２　甲が賠償責任を負う場合、その上限は過去12ヶ月の実支払料金の合計額とします。</p>
+        <p class="para">３　インターネット回線障害・乙側設備の不具合・天災・感染症・乙の誤操作に起因する損害は免責とします。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第11条（契約期間）</div>
+      <div class="article-body">
+        <p>本契約の有効期間は締結日から1年間とします。期間満了の1ヶ月前までに書面による解約の申し出がない場合、同一条件で1年間自動更新し、以後も同様とします。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第12条（解約・解除）</div>
+      <div class="article-body">
+        <p class="para">１　各当事者は、書面による1ヶ月前の通知をもっていつでも解約できます。</p>
+        <p class="para">２　乙が①契約条項に重大違反、②利用料金を2ヶ月以上滞納、③差押・破産・民事再生等の申立、④解散・廃業、⑤反社会的勢力に該当、のいずれかに該当した場合、甲は催告なく解除できます。</p>
+        <p class="para">３　本契約終了後、乙は直ちに本サービスの利用を停止しなければなりません。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第13条（反社会的勢力の排除）</div>
+      <div class="article-body">
+        <p class="para">１　甲乙は、現在および将来にわたり、自己（役員含む）が反社会的勢力（暴力団、暴力団員、暴力団準構成員、暴力団関係企業、総会屋等）でないことを表明・保証します。</p>
+        <p class="para">２　違反が判明した場合、相手方は催告なく本契約を解除できます。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第14条（準拠法・管轄裁判所）</div>
+      <div class="article-body">
+        <p class="para">１　本契約の解釈・適用は日本法に準拠します。</p>
+        <p class="para">２　紛争については甲の本店所在地を管轄する地方裁判所を第一審の専属合意管轄裁判所とします。</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">第15条（協議）</div>
+      <div class="article-body">
+        <p>本契約に定めのない事項または疑義が生じた場合、甲乙誠意をもって協議のうえ解決します。</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 別紙（フル幅・2列） -->
+<div class="appendix-row">
+  <div class="appendix-section">
+    <div class="appendix-title">別紙1　サービス仕様（主要機能）</div>
+    <ul class="spec-list">
+      <li>タスク作成・編集・削除（担当者・期限・優先度・ステータス）</li>
+      <li>部署内メンバーへのアサインと進捗管理</li>
+      <li>ステータス管理（未着手／進行中／完了／保留）</li>
+      <li>期限アラート・リマインド通知（メール・チャット連携）</li>
+      <li>タスクコメント・添付ファイル機能</li>
+      <li>カレンダービュー・ガントチャート表示</li>
+      <li>管理者によるメンバー管理・権限設定</li>
+      <li>タスク履歴・完了実績のログ管理・CSVエクスポート</li>
+    </ul>
+    <div class="note">動作環境：Chrome・Edge・Safari（各最新版）、Win10/11・macOS12以降・iOS15以降・Android11以降　／　サポート：平日10:00〜18:00（TEL:070-2222-2091 / Mail:tesjapan.gk@gmail.com）　目標応答：受付後2営業日以内　稼働率目標：月間99%以上（計画停止除く、保証値ではない）</div>
+  </div>
+  <div class="appendix-section">
+    <div class="appendix-title">別紙2　料金表（部署単位・税抜）</div>
+    <table>
+      <thead>
+        <tr><th>プラン</th><th>ユーザー数</th><th>月額</th><th>初期費用</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>スタータープラン</td>
+          <td style="text-align:center;">〜10名</td>
+          <td style="text-align:right;">¥10,000</td>
+          <td style="text-align:right;">¥100,000</td>
+          <td>1部署向け</td>
+        </tr>
+        <tr>
+          <td>スタンダードプラン</td>
+          <td style="text-align:center;">〜30名</td>
+          <td style="text-align:right;">¥20,000</td>
+          <td style="text-align:right;">¥100,000</td>
+          <td>中規模部署向け</td>
+        </tr>
+        <tr>
+          <td>エンタープライズ</td>
+          <td style="text-align:center;">無制限</td>
+          <td style="text-align:center;">要見積</td>
+          <td style="text-align:center;">要見積</td>
+          <td>全社・カスタマイズ</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">※複数部署同時契約は割引対応あり（全社導入時はご相談ください）　※年払い選択で2ヶ月分割引　※初期費用に環境セットアップ・操作説明1回（オンライン60分）を含む　※料金改定時は第4条3項に従い3ヶ月前に通知</div>
+  </div>
+</div>
+
+<!-- 署名欄 -->
+<div class="signature-area">
+  <div class="sig-title">署名欄</div>
+  <div class="sig-grid">
+    <div class="sig-box">
+      <div class="sig-label">甲（提供者）</div>
+      <div class="sig-row"><span class="sig-key">商号等</span><span class="sig-val">TEsJapan</span></div>
+      <div class="sig-row"><span class="sig-key">所在地</span><span class="sig-val">〒104-0061　東京都中央区銀座1丁目12番4号　N&amp;E BLD 6F</span></div>
+      <div class="sig-row"><span class="sig-key">代表者</span><span class="sig-val">小野寺 和裕</span></div>
+      <div class="sig-row"><span class="sig-key">署名・捺印</span><span class="sig-val">&nbsp;</span></div>
+    </div>
+    <div class="sig-box">
+      <div class="sig-label">乙（利用者）</div>
+      <div class="sig-row"><span class="sig-key">商号等</span><span class="sig-val">&nbsp;</span></div>
+      <div class="sig-row"><span class="sig-key">代表者</span><span class="sig-val">&nbsp;</span></div>
+      <div class="sig-row"><span class="sig-key">署名・捺印</span><span class="sig-val">&nbsp;</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="doc-footer">TEsJapan タスク管理システム 利用契約書　Ver.2.0　／　©2026 TEsJapan. All Rights Reserved.</div>
+
+</body>
+</html>
